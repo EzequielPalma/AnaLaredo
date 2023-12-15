@@ -1,0 +1,95 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rickards</title>
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="images/OIG.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+
+  <header>
+    <nav>
+        <div id="logo">
+            <a href="index.html">
+                <img src="/images/rickand.png" alt="Logo CryptoCard"/>
+            </a>
+        </div>
+
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">PERSONAJES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">LUGARES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">EPISODIOS</a>
+          </li>
+       
+        </ul>
+    </nav>
+
+  </header>
+
+  
+  <!-- Con este select hacemos la paginacion, en el evento(?) onchange le pasamos la funcion y le decimos que modifique el valor
+  ese valor sera pagina. -->
+
+  <select name="pagina" id="pagina" class="form-select" aria-label="Default select example" onchange="apiRick(this.value)">
+    <option value="0" selected>Accede a otras páginas!</option>
+        <script>
+            for (let i = 1; i <=42; i++) {
+                document.write('<option value=' + i + '>'+i+'</option>');
+            }
+            
+        </script>
+  </select>
+
+  <!-- Aqui tenemos el input que es un buscador y el select que es para filtrar por status, muy importantes los IDs de
+  name-filter y status-filter -->
+
+  <div id="filters">
+    <input type="text" id="name-filter" placeholder="Busca a tu personaje!">
+    <select name="status-filter" id="status-filter">
+      <option value="">Filtrar por estado</option>
+      <option value="alive">Vivo</option>
+      <option value="dead">Muerto</option>
+      <option value="unknown">Desconocido</option>
+    </select>
+  </div>
+
+  <main>
+    <div id="resultado"></div>
+ 
+
+  </main>
+
+  
+
+  <!-- <select name="pagina-2" id="pagina-2">
+    <option value="">paginas</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    
+  </select> -->
+
+  <!-- Aqui tenia otro select para filtrar entre lo filtrado, para paginar en lo que habiamos filtrado pero toque mucho y no recuerdo como lo tenia
+  aunque primero vamos a intentar paginar normal, usar el buscador y las opciones de filtrado de status, mas adelante si queres tambien intentamos
+  esto. -->
+
+  <script src="javascript/index.js"></script>
+</body>
+
+</html>
